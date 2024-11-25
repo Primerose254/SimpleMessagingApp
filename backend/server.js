@@ -19,7 +19,7 @@ const io = socketIo(server, {
 });
 
 // Initialize Web3
-const web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
+const web3 = new Web3(new Web3.providers.HttpProvider('https://sepolia.infura.io/v3/ffce9e9e527a423e97baa836039486cf'));
 
 // Middleware to enable CORS
 app.use(cors());
@@ -50,7 +50,7 @@ const contractABI = [
     "type": "function"
   }
 ];
-const contractAddress = '0x8e400d7e1f25bd86c9d683776b8680dffe8a39fd'; // Replace with your deployed contract address
+const contractAddress = '0x627306090abaB3A6e1400e9345bC60c78a8BEf57'; // Replace with your deployed contract address
 const contract = new web3.eth.Contract(contractABI, contractAddress);
 
 // Serve static files from the 'public' directory
